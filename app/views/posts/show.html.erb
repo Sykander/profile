@@ -12,7 +12,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post.user %>
+  <%= User.find(@post.user.id).email %>
 </p>
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_post_path(@post) %> |
