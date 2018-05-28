@@ -1,2 +1,6 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div class="<%= if notice then 'absolute-flash-active' else 'absolute-flash' end%>">
+  <p class="notice"><%= notice %></p>
+</div>
+<div class="<%= if alert then 'absolute-flash-active' else 'absolute-flash' end%>">
+  <p class="alert"><%= alert %></p>
+</div>

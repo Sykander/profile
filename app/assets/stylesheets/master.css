@@ -1,0 +1,18 @@
+div.absolute-flash-active{
+  position: absolute;
+  top: 2px;
+  right: 30%;
+  display: block;
+  padding: 1px;
+  background:rgba(0, 0, 0, 0.85);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 1px;
+}
+
+div.absolute-flash{
+  position: absolute;
+  display: none;
+}
