@@ -4,27 +4,38 @@ class DiscussionsController < ApplicationController
   # GET /discussions
   # GET /discussions.json
   def index
-    @discussions = Discussion.all
+    @forum = Forum.find(params[:forum_id])
+    @discussions = @forum.discussions
   end
 
   # GET /discussions/1
   # GET /discussions/1.json
   def show
+    @forum = Forum.find(params[:forum_id])
+    @discussion = @forum.discussions.find(params[:id])
   end
 
   # GET /discussions/new
   def new
-    @discussion = Discussion.new
+    @forum = Forum.find(params[:forum_id])
+    @discussion = @forum.discussions.build
+    @discussion.forum_id = @forum.id
+    @discussion.user_id = current_user.id
   end
 
   # GET /discussions/1/edit
   def edit
+    @forum = Forum.find(params[:forum_id])
+    @discussion = forum.discussions.find(params[:id])
   end
 
   # POST /discussions
   # POST /discussions.json
   def create
-    @discussion = Discussion.new(discussion_params)
+    @forum = Forum.find(params[:forum_id])
+    @discussion = @forum.discussions.build
+    @discussion.forum_id = @forum.id
+    @discussion.user_id = current_user.id
 
     respond_to do |format|
       if @discussion.save

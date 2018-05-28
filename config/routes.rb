@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :forums
-  scope 'forums/:forum' do
-    resources :discussions
+  resources :forums do
+    resources :discussions do
+      resources :posts
+    end
   end
-  scope 'forums/:forum/discussions/:discussion' do
-    resources :posts
-  end
-
   devise_for :users, :controllers => { registrations: 'registrations' }
   get 'users/me', to: 'users#showMe', as: 'my_profile'
   get 'users/:id', to: 'users#show'
