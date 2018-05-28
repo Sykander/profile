@@ -20,7 +20,13 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.where(@record.user_id == @user.id)
+      posts = Post.all
+      scope = []
+      posts.each do |post|
+        if post.user_id == @user.id then scope.push(post)
+        end
+      end
+      scope
     end
   end
 end
