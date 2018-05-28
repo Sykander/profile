@@ -23,7 +23,7 @@ class PostPolicy < ApplicationPolicy
       posts = Post.all
       scope = []
       posts.each do |post|
-        if post.user_id == @user.id then scope.push(post)
+        if user && post.user_id == @user.id then scope.push(post)
         end
       end
       scope
