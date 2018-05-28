@@ -1,7 +1,7 @@
 div.absolute-flash-active{
   position: absolute;
-  top: 2px;
-  right: 30%;
+  top: 50px;
+  right: 0;
   display: block;
   padding: 1px;
   background:rgba(0, 0, 0, 0.85);
