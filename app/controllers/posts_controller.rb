@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    authorize Post, :new?
+    authorize Post
   end
 
   # GET /posts/1/edit
@@ -56,6 +56,8 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    # if the post can be editted by the user then the user may also destroy it
+    authorize @post, :edit?
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }

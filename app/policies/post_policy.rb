@@ -20,7 +20,7 @@ class PostPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope
+      scope.where(@record.user_id == @user.id)
     end
   end
 end
