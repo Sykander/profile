@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :posts
   devise_for :users, :controllers => { registrations: 'registrations' }
+  get 'users/:id', to: 'users#show'
   root to: 'home#landing'
   get 'home/landing'
   get 'home/home'
