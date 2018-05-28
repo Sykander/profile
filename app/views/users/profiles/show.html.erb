@@ -1,0 +1,7 @@
+<%= @user.first_name %> <%= @user.last_name %> <br>
+<%= @user.email %> <br>
+<% if @user == current_user %>
+  <h4>Your posts:</h4>
+  <%= render 'posts/list'%><br>
+  <%= link_to 'New Post', new_post_path %>
+<% end %>
