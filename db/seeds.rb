@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+user = User.create! :first_name => 'Sykander', :last_name => 'Gul', :email => 'sgul@spartaglobal.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 user = User.create! :first_name => 'John', :last_name => 'Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 user = User.create! :first_name => 'John', :last_name => 'Doe', :email => 'john2@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 user = User.create! :first_name => 'John', :last_name => 'Doe', :email => 'john3@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'

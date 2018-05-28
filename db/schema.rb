@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_205837) do
+ActiveRecord::Schema.define(version: 2018_05_28_075955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "discussions", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "forum_id"
+    t.index ["forum_id"], name: "index_discussions_on_forum_id"
+    t.index ["user_id"], name: "index_discussions_on_user_id"
+  end
+
+  create_table "forums", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_forums_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -21,6 +40,8 @@ ActiveRecord::Schema.define(version: 2018_05_27_205837) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "discussion_id"
+    t.index ["discussion_id"], name: "index_posts_on_discussion_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -39,9 +60,14 @@ ActiveRecord::Schema.define(version: 2018_05_27_205837) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.integer "authorisation"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "discussions", "forums"
+  add_foreign_key "discussions", "users"
+  add_foreign_key "forums", "users"
+  add_foreign_key "posts", "discussions"
   add_foreign_key "posts", "users"
 end
