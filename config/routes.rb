@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :replies
   resources :posts
   devise_for :users, :controllers => { registrations: 'registrations' }
   get 'users/me', to: 'users#showMe', as: 'my_profile'
