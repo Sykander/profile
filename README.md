@@ -8,7 +8,7 @@ This is my personal project to design a web app with :
 
 # Getting started
 
-Clone down the repo
+Clone down the repo,
 
 ```
 git clone https://github.com/Sykander/profile.git
