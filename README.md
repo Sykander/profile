@@ -8,7 +8,7 @@ This is my personal project to design a web app with :
 
 # Getting started
 
-Clone down the repo 
+Clone down the repo,
 
 ```
 git clone https://github.com/Sykander/profile.git
@@ -26,7 +26,24 @@ and now you can run the server with,
 ```
 rails s
 ```
-finally, connect to the web page at 
+finally, connect to the web page at
 ```
 http://0.0.0.0:3000/
 ```
+
+# Using the site
+
+You can create an account using the link in the top right of the page on the navbar, or you can use one of the seeded accounts with
+
+email:
+```
+john@gmail.com
+```
+password:
+```
+topsecret
+```
+
+You can create a post after signing in by clicking on 'Posts' in the navbar and then clicking on the 'Create new post' button.
+
+Unsigned users can view posts but cannot create them.

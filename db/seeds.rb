@@ -10,6 +10,6 @@
 user = User.create! :first_name => 'John', :last_name => 'Doe', :email => 'john@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 user = User.create! :first_name => 'John', :last_name => 'Doe', :email => 'john2@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
 user = User.create! :first_name => 'John', :last_name => 'Doe', :email => 'john3@gmail.com', :password => 'topsecret', :password_confirmation => 'topsecret'
-Post.create(title: 'Test', body: 'Test', user_id: 1)
+Post.create(title: 'This is a post', body: 'Test', user_id: 1)
 Post.create(title: 'Test', body: 'Test', user_id: 2)
 Post.create(title: 'Test', body: 'Test', user_id: 3)
