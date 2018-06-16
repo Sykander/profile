@@ -18,6 +18,10 @@ install ruby, if not already installed,
 ruby -v
 ruby 2.3.1p112
 ```
+install all necessary gems
+```
+bundle
+```
 now set up the database with PostgreSQL with,
 ```
 rails db:create db:migrate db:seed
